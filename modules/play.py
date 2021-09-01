@@ -73,7 +73,7 @@ async def play(client, message, current_client):
                     await delayDelete(m, current_client.get('remove_messages'))
                 return
 
-        sent_msg = await client.send_message(message.chat.id, f"**__Fetching song details... __**")
+        sent_msg = await client.send_message(message.chat.id, f"**__Detallar əldə edilir... __**")
         songDetails = await YouTubeSearch(song_url_name, 1)
 
         if songDetails is not None and len(songDetails) > 0:
@@ -140,7 +140,7 @@ async def play(client, message, current_client):
                             input_peer = await callmanager.user_app.resolve_peer(message.chat.id)
                             chat = await callmanager.user_app.send(GetFullChannel(channel=input_peer))
                             title_change = EditGroupCallTitle(call=chat.full_chat.call,
-                                                              title="Song Player | By SkTechHub")
+                                                              title="Mahnı Vaxtı🎶")
                             await callmanager.user_app.send(title_change)
                         except Exception as ex:
                             logWarning(
@@ -150,7 +150,7 @@ async def play(client, message, current_client):
                             logInfo(
                                 f"Sending cover mesage in chat : {chat_id} : {cover_file_name}")
 
-                            caption = f"**🎧 Name:** `{(song_info['title'].strip())[:20]}`\n**⏱ Duration:** `{song_info['duration']}`\n**💡 Requester:** {req_by}\n\n`Join voice chat to listen to the song.`{footer_val}"
+                            caption = f"**🎧 Mahnı Adı:** `{(song_info['title'].strip())[:20]}`\n**⏱ Mahnı Vaxtı:** `{song_info['duration']}`\n**💡 Sifariş Edən:** {req_by}\n\n`Dinləmək üçün səsli söhbətə qatılın .`{footer_val}"
                             m = await client.send_photo(
                                 message.chat.id,
                                 photo=cover_file_name,
