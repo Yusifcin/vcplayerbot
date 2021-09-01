@@ -61,7 +61,7 @@ class GoupCallInstance(object):
             try:
                 chat_id = context.full_chat.id
                 logInfo(
-                    f"Playout ended, skipping to next song, current file which ended : {args}")
+                    f"Mahnı bitdi, növbəti mahnıya keçid edilir🙃 : {args}")
                 self.currentRepeatCount = self.currentRepeatCount + 1
                 if self.repeatCount > 1 and self.currentRepeatCount < self.repeatCount:
                     logInfo(
@@ -125,7 +125,7 @@ class GoupCallInstance(object):
         except Exception as ex:
             logWarning(
                 f"Can ignore this => export_chat_invite_link : {self.chat_id} {ex}")
-            return f"🕵️‍♀️**Oops, add the bot as an admin in the chat and grant it all permissions.**"
+            return f"🕵️‍♀️**Botun işləməsi üçün @YushkaMusicKomekci Asistantı qrupa əlavə edin.Daha sonra bota və asistanta yetki verin📢.**"
         try:
             await useClient.join_chat(invitelink)
             return True
@@ -154,7 +154,7 @@ class GoupCallInstance(object):
                 msg, kbd = getMessage(None, 'start-voice-chat')
                 return msg
             except Exception as e:
-                return f"✖️ **Error while starting the playback:** __{e}__"
+                return f"✖️ **Oxudularkən xəta baş verdi😔:** __{e}__"
 
             self.songs.append(
                 {"file": fileName, "song": songInfo, "requested_by": requested_by, "time": time.time()})
@@ -175,7 +175,7 @@ class GoupCallInstance(object):
             self.songs.append(
                 {"file": fileName, "song": songInfo, "requested_by": requested_by, "time": time.time()})
             req_by = f"[{requested_by['title']}](tg://user?id={requested_by['chat_id']})"
-            return True, f"**✅ Added to queue.**\n**Name:** `{(songInfo['title'].strip())[:20]}`\n**Requester:** {req_by}"
+            return True, f"**✅ Növbəti mahnı əlavə edildi.**\n**Adı:** `{(songInfo['title'].strip())[:20]}`\n**istəyən:** {req_by}"
         except Exception as ex:
             self.logException(f"Error while addSongsInQueue: {ex}", True)
             return False, "**__Error while adding song in the queue : {ex}.__**"
@@ -195,7 +195,7 @@ class GoupCallInstance(object):
                 new_song = queues.get(self.chat_id)
                 await self.changeFile(
                     new_song["file"], new_song["song"], new_song['requested_by'], old_file)
-                return True, f"**__Succesfully skipped the song.__**\n\n**Now Playing ▶️** `{new_song['song']['title']}`"
+                return True, f"**__Növbəti mahnıya keçid edildi.__**\n\n**Mahnı ▶️** `{new_song['song']['title']}`"
         except Exception as ex:
             self.logException(f"Error while skipPlayBack: {ex}", True)
             return False, f"**__Error while skipping : {ex}__**"
@@ -249,9 +249,9 @@ class GoupCallInstance(object):
                         logWarning(f"Failed to force leave :{ex}")
 
             await asyncio.sleep(0.1)
-            resp_message = "**Playback ended and thank you 🙏🏻 for trying and testing the service.**\n__Do give your feedback/suggestion @sktechhub_chat.__"
+            resp_message = "**Mahnı oxutma sonlandırıldı 🙏🏻 İstifadə üçün təşəkkürlər.**\n__Təklif və şikayətlər üçün @ABISHOV_27.__"
             if sendMessage is True and self.bot_client is not None:
-                resp_message = "**Playback ended `[If you were in middle of a song and you are getting this message then this has happended due to a deployement. You can play again after some time.]`**\n\n__Thank you for trying and do give your feedback/suggestion @sktechhub_chat.__"
+                resp_message = "**Playback ended `[If you were in middle of a song and you are getting this message then this has happended due to a deployement. You can play again after some time.]`**\n\n__Thank you for trying and do give your feedback/suggestion @ABISHOV_27.__"
                 await self.bot_client.send_message(self.chat_id, f"{resp_message}")
             return True, resp_message
         except BotMethodInvalid as bi:
