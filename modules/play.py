@@ -79,7 +79,7 @@ async def play(client, message, current_client):
         if songDetails is not None and len(songDetails) > 0:
             song_info = songDetails[0]
             if time_to_seconds(song_info['duration']) > (int(Config.get('ALLOWED_SONG_DURATION_IN_MIN'))*60):
-                m = await sent_msg.edit(f"**__😢 Seçilən mahnı çox uzundur, Zəhmət olmasa uzunluğu {Config.get('ALLOWED_SONG_DURATION_IN_MIN')} az olan mahnı seçin🙂.__**")
+                m = await sent_msg.edit(f"**__😢 Seçilən mahnı çox uzundur, Zəhmət olmasa uzunluğu {Config.get('ALLOWED_SONG_DURATION_IN_MIN')} dəqiqədən az olan mahnı seçin🙂.__**")
                 if current_client.get('remove_messages') is not None and current_client.get('remove_messages') > 0:
                     await delayDelete(m, current_client.get('remove_messages'))
                 return
