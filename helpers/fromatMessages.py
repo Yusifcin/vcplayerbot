@@ -50,11 +50,11 @@ def getMessage(message, action):
             return send_message, getReplyKeyBoard(message, action)
 
         elif action == "start-voice-chat":
-            send_message = f"**Please start a voice chat and then send the command again**"
+            send_message = f"**Zəhmət olmasa səsli söhbət başladın və əmrii yenidən göndərin**"
             send_message = send_message + \
-                f"\n**1.** __To start a group chat, you can head over to your group’s description page.__"
+                f"\n**1.** __Səsli söhbət başlatmaq üçün, qrupun açıqlama səhifəsinə keçid edin.__"
             send_message = send_message + \
-                f"\n**2.** __Then tap the three-dot button next to Mute and Search start a Voice Chat.__"
+                f"\n**2.** __Daha sonra sağda 3nöqtəyə basın, Sesli söhbet aça basın.__"
             return send_message, getReplyKeyBoard(message, action)
 
     except Exception as ex:
