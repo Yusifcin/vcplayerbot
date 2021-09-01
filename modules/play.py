@@ -99,7 +99,7 @@ async def play(client, message, current_client):
                 sent_msg = await sent_msg.edit(f"**__ 🙃 Biraz gözlə qadası [Təxmini : 10-15 saniyə]__**")
                 filename = await DownloaderService.download_and_transcode_song(f"{song_info['link']}")
                 if filename is None:
-                    m = await sent_msg.edit(f"**__✖️ Proses zamanı xəta baş verdi.Yenidən yoxla! __**")
+                    m = await sent_msg.edit(f"**__✖️ Mahnı adını düzgüb yazdığına əmin ol! __**")
                     if current_client.get('remove_messages') is not None and current_client.get('remove_messages') > 0:
                         await delayDelete(m, current_client.get('remove_messages'))
                     return
@@ -109,7 +109,7 @@ async def play(client, message, current_client):
                         footer = f"{Config.get('PLAYBACK_FOOTER')}".replace(
                             '\\n', '\n')
                     footer_val = (
-                        '\n'+footer) if footer is not None else '\nFor any issues contact @ABISHOV_27'
+                        '\n'+footer) if footer is not None else '\nProblemlə bağlı əlaqə @ABISHOV_27'
 
                     # if curernt call is there , then add it to queue
                     if pytgcalls_instance.active is True:
@@ -150,7 +150,7 @@ async def play(client, message, current_client):
                             logInfo(
                                 f"Sending cover mesage in chat : {chat_id} : {cover_file_name}")
 
-                            caption = f"**🎧 Mahnı Adı:** `{(song_info['title'].strip())[:20]}`\n**⏱ Mahnı Vaxtı:** `{song_info['duration']}`\n**💡 Sifariş Edən:** {req_by}\n\n`Dinləmək üçün səsli söhbətə qatılın .`{footer_val}"
+                            caption = f"**🎧  Adı:** `{(song_info['title'].strip())[:20]}`\n**⏱ Vaxt:** `{song_info['duration']}`\n**💡 Sifariş Edən:** {req_by}\n\n`Dinləmək üçün səsli söhbətə qatılın .`{footer_val}"
                             m = await client.send_photo(
                                 message.chat.id,
                                 photo=cover_file_name,
@@ -161,7 +161,7 @@ async def play(client, message, current_client):
                                 os.remove(cover_file_name)
                         else:
 
-                            m = await sent_msg.edit(f"**✅ Mahnı Səslidə Oxunur **\n\n**🎧 Mahnı Adı:** `{(song_info['title'].strip())[:20]}`\n**⏱ Mahnı Vaxtı:** `{song_info['duration']}`\n**💡 Sifariş Edən:** {req_by}{footer_val}")
+                            m = await sent_msg.edit(f"**✅ Mahnı Səslidə Oxunur **\n\n**🎧 Adı:** `{(song_info['title'].strip())[:20]}`\n**⏱ Vaxt:** `{song_info['duration']}`\n**💡 Sifariş Edən:** {req_by}{footer_val}")
                         # if current_client.get('remove_messages') is not None and current_client.get('remove_messages') > 0:
                         #     await delayDelete(m, current_client.get('remove_messages'))
                         return
