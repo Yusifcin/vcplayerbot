@@ -10,9 +10,9 @@ def getMessage(message, action):
         ALLOWED_CHAT_TYPES = config.get("ALLOWED_CHAT_TYPES")
 
         if action == "private-chat":
-            send_message = f"**Hi 🎵 {message.chat.first_name if hasattr(message.chat, 'first_name') else 'User'}**"
+            send_message = f"**Salam 🎵 {message.chat.first_name if hasattr(message.chat, 'first_name') else 'User'}**"
             send_message = send_message + \
-                f"\n\n**[Voice Chat Music Player]({config.get('BOT_URL')})** is a [SkTechHub Product]({config.get('PARENT_URL')})."
+                f"\n\n**[Yushka Music🎶]({config.get('BOT_URL')})** is a [SkTechHub Product]({config.get('PARENT_URL')})."
             send_message = send_message + \
                 f"\n__It is designed to play, as simple as possible, music in your groups through the **new voice chats** introduced by Telegram.__"
             send_message = send_message + \
@@ -20,24 +20,24 @@ def getMessage(message, action):
             return send_message, getReplyKeyBoard(message, action)
 
         elif action == "help-msg":
-            helpMessage = f"**VoiceChat Music Player**\n**Source Code :** [Repository]({config.get('GITHUB_REPO')})"
+            helpMessage = f"**VoiceChat Music Player**\n**🎶 :** [Repository]({config.get('GITHUB_REPO')})"
             helpMessage = helpMessage + \
-                f"\n\n• **/play song name/song url : ** __Start a song / add to queue.__"
-            helpMessage = helpMessage + f"\n• **/skip : ** __Skip to the next song in queue.__"
-            helpMessage = helpMessage + f"\n• **/stop : ** __Stop the playback.__"
+                f"\n\n• **/play mahnı adı/mahnı linki : ** __Qrupda səslidə mahnı oxudar.__"
+            helpMessage = helpMessage + f"\n• **/skip : ** __Növbəti mahnıya keçər.__"
+            helpMessage = helpMessage + f"\n• **/stop : ** __Mahnı oxumanı dayandırar.__"
             helpMessage = helpMessage + \
-                f"\n• **/refreshadmins : ** __Refreshes the admin list.__"
+                f"\n• **/refreshadmins : ** __Botun Admin siyahısını yeniləyər.__"
             helpMessage = helpMessage + \
-                f"\n• **/auth : ** __Adds the user in reply to the message as admin.__"
+                f"\n• **/auth : ** __Mesajına yanıt verdiyiniz şəxsi botda admin edər.__"
             helpMessage = helpMessage + \
-                f"\n• **/unauth : ** __Removes the user in reply to the message as admin.__"
+                f"\n• **/unauth : ** __Mesajına yanıt verdiyiniz şəxsi botda adminlikdən silər.__"
             helpMessage = helpMessage + \
-                f"\n• **/listadmins : ** __Lists the users assigned as admins for the bot.__"
+                f"\n• **/listadmins : ** __Botun admin siyahısını göstərər.__"
             helpMessage = helpMessage + \
-                f"\n• **/adminmode on|off : ** __Turning this on makes the bot actions available only to bot admins.__"
+                f"\n• **/adminmode on|off : ** __Admin modunu açar və səslidə mahnını yalnızca adminlər başlada bilər.__"
             helpMessage = helpMessage + \
-                f"\n• **/loop [2-5]|off : ** __Loop the playback [x] times(x is between 2-5) / Turn off the loop playback.__"
-            helpMessage = helpMessage + f"\n\n**__For any issues contact @ABISHOV_27__**"
+                f"\n• **/loop [2-5]|off : ** __Mahnı sürətini ayarlayar Maks 2-5.__"
+            helpMessage = helpMessage + f"\n\n**__Sahiblə əlaqə @ABISHOV_27__**"
             return helpMessage, getReplyKeyBoard(message, action)
 
         elif action == "chat-not-allowed":
