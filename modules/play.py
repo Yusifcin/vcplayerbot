@@ -96,7 +96,7 @@ async def play(client, message, current_client):
                             song_info['title'], song_info['thumbnails'][-1], cover_file_name)
 
                 # download and process the song
-                sent_msg = await sent_msg.edit(f"**__ {req_by} yazdığınız mahnını yükləyirəm🎶 __**")
+                sent_msg = await sent_msg.edit(f"**_ Mahnını yükləyirəm🎶 __**")
                 filename = await DownloaderService.download_and_transcode_song(f"{song_info['link']}")
                 if filename is None:
                     m = await sent_msg.edit(f"**__✖️ Mahnı adını düzgüb yazdığına əmin ol! __**")
