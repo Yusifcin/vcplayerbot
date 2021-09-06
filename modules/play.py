@@ -96,7 +96,7 @@ async def play(client, message, current_client):
                             song_info['title'], song_info['thumbnails'][-1], cover_file_name)
 
                 # download and process the song
-                sent_msg = await sent_msg.edit(f"**__ {req_by} istədiyin `{(song_info['title'].strip())[:20]} mahnısını yükləyirəm🎶 __**")
+                sent_msg = await sent_msg.edit(f"**__ {req_by} yazdığınız mahnını yükləyirəm🎶 __**")
                 filename = await DownloaderService.download_and_transcode_song(f"{song_info['link']}")
                 if filename is None:
                     m = await sent_msg.edit(f"**__✖️ Mahnı adını düzgüb yazdığına əmin ol! __**")
@@ -140,7 +140,7 @@ async def play(client, message, current_client):
                             input_peer = await callmanager.user_app.resolve_peer(message.chat.id)
                             chat = await callmanager.user_app.send(GetFullChannel(channel=input_peer))
                             title_change = EditGroupCallTitle(call=chat.full_chat.call,
-                                                              title="Mahnı Vaxtı🎶")
+                                                              title="Səndə bizə qoşul🎶")
                             await callmanager.user_app.send(title_change)
                         except Exception as ex:
                             logWarning(
