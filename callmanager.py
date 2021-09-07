@@ -188,7 +188,7 @@ class GoupCallInstance(object):
             if queues.is_empty(self.chat_id) is True or len(self.songs) == 0:
                 if fromCommand is False:
                     await self.stopPlayBack()
-                return False, f"**__😬 There are no songs waiting in queue, If you want to stop send /stop.__**"
+                return False, f"**__Növbədə mahnı yoxdur. /play link/ad yazaraq əlavə edə bilərsiz.__**"
             else:
                 old_file = self.songs[0].get('file')
                 self.songs.pop(0)
@@ -249,7 +249,7 @@ class GoupCallInstance(object):
                         logWarning(f"Failed to force leave :{ex}")
 
             await asyncio.sleep(0.1)
-            resp_message = "**Mahnı oxutma sonlandırıldı 🙏🏻 İstifadə üçün təşəkkürlər.**\n__Təklif və şikayətlər üçün @ABISHOV_27.__"
+            resp_message = "**Mahnı oxutma sonlandırıldı😇 İstifadə üçün təşəkkürlər.**\n__Təklif və şikayətlər üçün @ABISHOV_27.__"
             if sendMessage is True and self.bot_client is not None:
                 resp_message = "**Playback ended `[If you were in middle of a song and you are getting this message then this has happended due to a deployement. You can play again after some time.]`**\n\n__Thank you for trying and do give your feedback/suggestion @ABISHOV_27.__"
                 await self.bot_client.send_message(self.chat_id, f"{resp_message}")
