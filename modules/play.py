@@ -73,7 +73,7 @@ async def play(client, message, current_client):
                     await delayDelete(m, current_client.get('remove_messages'))
                 return
 
-        sent_msg = await client.send_message(message.chat.id, f"**__Detallar əldə edilir... __**")
+        sent_msg = await client.send_message(message.chat.id, f"**__Mahnı axtarılır🔎... __**")
         songDetails = await YouTubeSearch(song_url_name, 1)
 
         if songDetails is not None and len(songDetails) > 0:
@@ -88,7 +88,7 @@ async def play(client, message, current_client):
                 cover_file_name = None
                 # generate thumbnail only if the song is first one and not for queue
                 if pytgcalls_instance.active is not True:
-                    sent_msg = await sent_msg.edit(f"**__ 🎥 Mahnını Axtarıram🤔🎶 __**")
+                    sent_msg = await sent_msg.edit(f"**__ Mahnı yüklənir ⬇️ __**")
                     cover_file_name = None
                     if song_info.get('thumbnails') is not None and len(song_info['thumbnails']) > 0:
                         cover_file_name = f"images/{uuid.uuid4()}.png"
@@ -96,10 +96,10 @@ async def play(client, message, current_client):
                             song_info['title'], song_info['thumbnails'][-1], cover_file_name)
 
                 # download and process the song
-                sent_msg = await sent_msg.edit(f"**_ Mahnını yükləyirəm🎶 __**")
+                sent_msg = await sent_msg.edit(f"**_ Asistant səsli söhbətə qoşulur. (Qoşulma floodwait səbəbindən uzun çəkə bilər, xaiş olunur səbrli olun🥺) __**")
                 filename = await DownloaderService.download_and_transcode_song(f"{song_info['link']}")
                 if filename is None:
-                    m = await sent_msg.edit(f"**__✖️ Mahnı adını düzgüb yazdığına əmin ol! __**")
+                    m = await sent_msg.edit(f"**__✖️ Xəta baş verdi, /stop yazın yenidən başladın! __**")
                     if current_client.get('remove_messages') is not None and current_client.get('remove_messages') > 0:
                         await delayDelete(m, current_client.get('remove_messages'))
                     return
@@ -126,7 +126,7 @@ async def play(client, message, current_client):
 
                     response = await pytgcalls_instance.start_playback(filename, song_info, requested_by)
                     if response is not True:
-                        m = await sent_msg.edit(f"**__😢 Lazım olan proses getmir.__**\n{response}")
+                        m = await sent_msg.edit(f"**__😢 Qoşulma alınmadı.__**\n{response}")
                         if current_client.get('remove_messages') is not None and current_client.get('remove_messages') > 0:
                             await delayDelete(m, current_client.get('remove_messages'))
 
