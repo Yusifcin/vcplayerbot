@@ -16,11 +16,11 @@ def getMessage(message, action):
             send_message = send_message + \
                 f"\n__It is designed to play, as simple as possible, music in your groups through the **new voice chats** introduced by Telegram.__"
             send_message = send_message + \
-                f"\n\n**So why wait 🌀 add the bot to a group and get started 🎧**\n\n**Source Code :** [Repository]({config.get('GITHUB_REPO')})"
+                f"\n\n**So why wait 🌀 add the bot to a group and get started 🎧"
             return send_message, getReplyKeyBoard(message, action)
 
         elif action == "help-msg":
-            helpMessage = f"**VoiceChat Music Player**\n**🎶 :** [Repository]({config.get('GITHUB_REPO')})"
+            helpMessage = f"**Səsli Mahnı Botuna Xoş Gəlmisən**"
             helpMessage = helpMessage + \
                 f"\n\n• **/play mahnı adı/mahnı linki : ** __Qrupda səslidə mahnı oxudar.__"
             helpMessage = helpMessage + f"\n• **/skip : ** __Növbəti mahnıya keçər.__"
@@ -45,7 +45,7 @@ def getMessage(message, action):
             send_message = send_message + \
                 f"\n\n**Why ❓**\n- __Due to high usage we have restrcited the usage of the bot in just our [Support Group]({config.get('SUPPORT_GROUP')}) __"
             send_message = send_message + \
-                f"\n- __Join the [Support Group]({config.get('SUPPORT_GROUP')}) to access the bot or deploy your own bot __ **Source Code :** [Github]({config.get('GITHUB_REPO')})"
+                f"\n- __Join the [Support Group]({config.get('SUPPORT_GROUP')}) to access the bot or deploy your own bot __"
 
             return send_message, getReplyKeyBoard(message, action)
 
