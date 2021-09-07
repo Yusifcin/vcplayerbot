@@ -109,7 +109,7 @@ async def play(client, message, current_client):
                         footer = f"{Config.get('PLAYBACK_FOOTER')}".replace(
                             '\\n', '\n')
                     footer_val = (
-                        '\n'+footer) if footer is not None else '\nXoş dinləmələr😊🎶'
+                        '\n'+footer) if footer is not None else '\nXoş dinləmələr😊🎧'
 
                     # if curernt call is there , then add it to queue
                     if pytgcalls_instance.active is True:
@@ -150,7 +150,7 @@ async def play(client, message, current_client):
                             logInfo(
                                 f"Sending cover mesage in chat : {chat_id} : {cover_file_name}")
 
-                            caption = f"**🎧 Adı:** `{(song_info['title'].strip())[:20]}`\n**⏱ Vaxt:** `{song_info['duration']}`\n**💡 İstəyən:** {req_by}\n\n`Dinləmək üçün səsli söhbətə qatılın .`{footer_val}"
+                            caption = f"**🎧 Adı:** `{(song_info['title'].strip())[:20]}`\n**⏱ Vaxt:** `{song_info['duration']}`\n**💡 İstəyən:** {req_by}\n\n`Dinləmək üçün səsli söhbətə qatılın.`{footer_val}"
                             m = await client.send_photo(
                                 message.chat.id,
                                 photo=cover_file_name,
