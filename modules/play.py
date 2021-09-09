@@ -88,7 +88,7 @@ async def play(client, message, current_client):
                 cover_file_name = None
                 # generate thumbnail only if the song is first one and not for queue
                 if pytgcalls_instance.active is not True:
-                    sent_msg = await sent_msg.edit(f"**__ Mahnı yüklənir ⬇️ __**")
+                    sent_msg = await sent_msg.edit(f"**__ Mahnı bota əlavə olunur ⬇️ __**")
                     cover_file_name = None
                     if song_info.get('thumbnails') is not None and len(song_info['thumbnails']) > 0:
                         cover_file_name = f"images/{uuid.uuid4()}.png"
@@ -96,7 +96,7 @@ async def play(client, message, current_client):
                             song_info['title'], song_info['thumbnails'][-1], cover_file_name)
 
                 # download and process the song
-                sent_msg = await sent_msg.edit(f"**__Asistant səsli söhbətə qoşulur. (Qoşulma floodwait səbəbindən uzun çəkə bilər, xaiş olunur səbrli olun🥺) __**")
+                sent_msg = await sent_msg.edit(f"**__Asistant səsli söhbətə qoşulur... __**")
                 filename = await DownloaderService.download_and_transcode_song(f"{song_info['link']}")
                 if filename is None:
                     m = await sent_msg.edit(f"**__✖️ Xəta baş verdi, /stop yazın yenidən başladın! __**")
@@ -140,7 +140,7 @@ async def play(client, message, current_client):
                             input_peer = await callmanager.user_app.resolve_peer(message.chat.id)
                             chat = await callmanager.user_app.send(GetFullChannel(channel=input_peer))
                             title_change = EditGroupCallTitle(call=chat.full_chat.call,
-                                                              title="Səndə bizə qoşul🎶")
+                                                              title="Dᴀʀᴋ Mᴜsiᴄ🎶")
                             await callmanager.user_app.send(title_change)
                         except Exception as ex:
                             logWarning(
