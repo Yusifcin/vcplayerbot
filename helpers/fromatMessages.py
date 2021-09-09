@@ -37,7 +37,7 @@ def getMessage(message, action):
                 f"\n• **/adminmode on|off : ** __Admin modunu açar və səslidə mahnını yalnızca adminlər başlada bilər.__"
             helpMessage = helpMessage + \
                 f"\n• **/loop [2-5]|off : ** __Mahnı sürətini ayarlayar Maks 2-5.__"
-            helpMessage = helpMessage + f"\n\n**__Sahiblə əlaqə @ABISHOV_27__**"
+            helpMessage = helpMessage + f"\n\n**__Əlavə mənbə : @YusifinBiosu__**"
             return helpMessage, getReplyKeyBoard(message, action)
 
         elif action == "chat-not-allowed":
@@ -54,7 +54,7 @@ def getMessage(message, action):
             send_message = send_message + \
                 f"\n**1.** __Səsli söhbət başlatmaq üçün, qrupun açıqlama səhifəsinə keçid edin.__"
             send_message = send_message + \
-                f"\n**2.** __Daha sonra sağda 3nöqtəyə basın, Sesli söhbet aça basın.__"
+                f"\n**2.** __Daha sonra sağda 3nöqtəyə basın, Sesli söhbet başlata basın.__"
             return send_message, getReplyKeyBoard(message, action)
 
     except Exception as ex:
