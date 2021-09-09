@@ -125,7 +125,7 @@ class GoupCallInstance(object):
         except Exception as ex:
             logWarning(
                 f"Can ignore this => export_chat_invite_link : {self.chat_id} {ex}")
-            return f"🕵️‍♀️**Botun işləməsi üçün @YushkaMusicKomekci Asistantı qrupa əlavə edin.Daha sonra bota və asistanta yetki verin📢.**"
+            return f"🕵️‍♀️**Botun işləməsi üçü @DarkMusicAssistant Asistantı qrupa əlavə edin.Daha sonra bota və asistanta yetki verin📢.**"
         try:
             await useClient.join_chat(invitelink)
             return True
@@ -249,7 +249,7 @@ class GoupCallInstance(object):
                         logWarning(f"Failed to force leave :{ex}")
 
             await asyncio.sleep(0.1)
-            resp_message = "**Mahnı oxutma sonlandırıldı😇 İstifadə üçün təşəkkürlər.**\n__Təklif və şikayətlər üçün @ABISHOV_27.__"
+            resp_message = "**Mahnı oxutma sonlandırıldı😇 İstifadə üçün təşəkkürlər.**\n__/play mahnı adı yazaraq yenidən başlada bilərsiz.__"
             if sendMessage is True and self.bot_client is not None:
                 resp_message = "**Playback ended `[If you were in middle of a song and you are getting this message then this has happended due to a deployement. You can play again after some time.]`**\n\n__Thank you for trying and do give your feedback/suggestion @ABISHOV_27.__"
                 await self.bot_client.send_message(self.chat_id, f"{resp_message}")
