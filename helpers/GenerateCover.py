@@ -55,8 +55,8 @@ async def generate_cover(title, thumbnail, result_file_name):
 
         draw.text((10, 640), f"{title}", fill="white", font=KRONA_52)
 
-        draw.text((985, 20), f"01:45 ●━━━━─── 3:00", fill="white", font=KRONA_SMALL)
-        draw.text((1100, 50), f"⇆   ◁ㅤㅤ❚❚ㅤㅤ▷   ↻", fill="white", font=KRONA_SMALL)
+        draw.text((985, 20), f"Xoş Dinləmələr", fill="white", font=KRONA_SMALL)
+        draw.text((1100, 50), f"Thank you for choosing us", fill="white", font=KRONA_SMALL)
 
         img.save(result_file_name, optimize=True, quality=20)
         final_img = result_file_name
