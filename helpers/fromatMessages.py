@@ -37,7 +37,7 @@ def getMessage(message, action):
                 f"\n• **/adminmode on|off : ** __Admin modunu açar və səslidə mahnını yalnızca adminlər başlada bilər.__"
             helpMessage = helpMessage + \
                 f"\n• **/loop [2-5]|off : ** __Mahnı sürətini ayarlayar Maks 2-5.__"
-            helpMessage = helpMessage + f"\n\n**__Əlavə mənbə : @YusifinBiosu__**"
+            helpMessage = helpMessage + f"\n\n**__Botun asitanı @DarkMusicAssistant**"
             return helpMessage, getReplyKeyBoard(message, action)
 
         elif action == "chat-not-allowed":
