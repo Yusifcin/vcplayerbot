@@ -96,7 +96,7 @@ async def play(client, message, current_client):
                             song_info['title'], song_info['thumbnails'][-1], cover_file_name)
 
                 # download and process the song
-                sent_msg = await sent_msg.edit(f"**__Asistant səsli söhbətə qoşulur... __**")
+                sent_msg = await sent_msg.edit(f"**__Asistant səsli söhbətə qoşulur🔄 __**")
                 filename = await DownloaderService.download_and_transcode_song(f"{song_info['link']}")
                 if filename is None:
                     m = await sent_msg.edit(f"**__✖️ Xəta baş verdi, /stop yazın yenidən başladın! __**")
@@ -109,7 +109,7 @@ async def play(client, message, current_client):
                         footer = f"{Config.get('PLAYBACK_FOOTER')}".replace(
                             '\\n', '\n')
                     footer_val = (
-                        '\n'+footer) if footer is not None else '\nMahnı yükləmə botumuz @Musicaxtar_bot'
+                        '\n'+footer) if footer is not None else '\nMahnı yüklə: @Musicaxtar_bot'
 
                     # if curernt call is there , then add it to queue
                     if pytgcalls_instance.active is True:
