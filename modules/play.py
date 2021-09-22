@@ -109,7 +109,7 @@ async def play(client, message, current_client):
                         footer = f"{Config.get('PLAYBACK_FOOTER')}".replace(
                             '\\n', '\n')
                     footer_val = (
-                        '\n'+footer) if footer is not None else '\n[Mahnını yükləmək üçün toxun]("https://t.me/Musicaxtar_bot").'
+                        '\n'+footer) if footer is not None else '\nMahnı yüklə: @Musicaxtar_bot'
 
                     # if curernt call is there , then add it to queue
                     if pytgcalls_instance.active is True:
