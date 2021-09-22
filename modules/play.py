@@ -73,7 +73,7 @@ async def play(client, message, current_client):
                     await delayDelete(m, current_client.get('remove_messages'))
                 return
 
-        sent_msg = await client.send_message(message.chat.id, f"**__Mahnı axtarılır🔎... __**")
+        sent_msg = await client.send_message(message.chat.id, f"**__Bot başladılır__**")
         songDetails = await YouTubeSearch(song_url_name, 1)
 
         if songDetails is not None and len(songDetails) > 0:
@@ -88,7 +88,7 @@ async def play(client, message, current_client):
                 cover_file_name = None
                 # generate thumbnail only if the song is first one and not for queue
                 if pytgcalls_instance.active is not True:
-                    sent_msg = await sent_msg.edit(f"**__ Mahnı bota əlavə olunur ⬇️ __**")
+                    sent_msg = await sent_msg.edit(f"**__ Mahnı axtarılır🔎 __**")
                     cover_file_name = None
                     if song_info.get('thumbnails') is not None and len(song_info['thumbnails']) > 0:
                         cover_file_name = f"images/{uuid.uuid4()}.png"
@@ -96,7 +96,7 @@ async def play(client, message, current_client):
                             song_info['title'], song_info['thumbnails'][-1], cover_file_name)
 
                 # download and process the song
-                sent_msg = await sent_msg.edit(f"**__Asistant səsli söhbətə qoşulur🔄 __**")
+                sent_msg = await sent_msg.edit(f"**__Mahnı Assistanta əlavə olunur.Biraz gözləyin🙂 __**")
                 filename = await DownloaderService.download_and_transcode_song(f"{song_info['link']}")
                 if filename is None:
                     m = await sent_msg.edit(f"**__✖️ Xəta baş verdi, /stop yazın yenidən başladın! __**")
@@ -109,7 +109,7 @@ async def play(client, message, current_client):
                         footer = f"{Config.get('PLAYBACK_FOOTER')}".replace(
                             '\\n', '\n')
                     footer_val = (
-                        '\n'+footer) if footer is not None else '\nMahnı yüklə: @Musicaxtar_bot'
+                        '\n'+footer) if footer is not None else '\nMahnını yükləmək üçün [👉BURA](https://t.me/Musicaxtar_bot) basın'
 
                     # if curernt call is there , then add it to queue
                     if pytgcalls_instance.active is True:
@@ -140,7 +140,7 @@ async def play(client, message, current_client):
                             input_peer = await callmanager.user_app.resolve_peer(message.chat.id)
                             chat = await callmanager.user_app.send(GetFullChannel(channel=input_peer))
                             title_change = EditGroupCallTitle(call=chat.full_chat.call,
-                                                              title="Dᴀʀᴋ Mᴜsiᴄ🎶")
+                                                              title="𓆩ᴅs𓆪 ¦ 𝐌𝐮𝐬𝐢𝐜")
                             await callmanager.user_app.send(title_change)
                         except Exception as ex:
                             logWarning(
@@ -150,7 +150,7 @@ async def play(client, message, current_client):
                             logInfo(
                                 f"Sending cover mesage in chat : {chat_id} : {cover_file_name}")
 
-                            caption = f"**🎧 Adı:** `{(song_info['title'].strip())[:20]}`\n**⏱ Müddət:** `{song_info['duration']}`\n**⚡ İstəyən:** {req_by}\n\n`Dinləmək üçün səsli söhbətə qatılın.Xoş dinləmələr😊🎧.`{footer_val}"
+                            caption = f"**🎧 Adı:** `{(song_info['title'].strip())[:20]}`\n**⏱ Müddət:** `{song_info['duration']}`\n**⚡ İstəyən:** {req_by}\n\n`Dinləmək üçün [👉BURA](https://t.me/{songInfo['requested_by']['group_username']}?voicechat) basın.Xoş dinləmələr🎧.`{footer_val}"
                             m = await client.send_photo(
                                 message.chat.id,
                                 photo=cover_file_name,
