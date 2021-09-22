@@ -12,11 +12,11 @@ def getMessage(message, action):
         if action == "private-chat":
             send_message = f"**Salam 🎵 {message.chat.first_name if hasattr(message.chat, 'first_name') else 'User'}**"
             send_message = send_message + \
-                f"\n\n**[𓆩ᴅs𓆪 ¦ 𝐌𝐮𝐬𝐢𝐜](https://t.me/DarkVoiceMusic_bot)** is a [YUSHKA🇦🇿](https://t.me/ABISHOV_27)."
+                f"\n\n𓆩ᴅs𓆪 ¦ 𝐌𝐮𝐬𝐢𝐜 @ABISHOV_27 tərəfindən hazırlanıb."
             send_message = send_message + \
-                f"\n__It is designed to play, as simple as possible, music in your groups through the **new voice chats** introduced by Telegram.__"
+                f"\nBotu qrupunuza əlavə edərək səsli söhbətdə mahnı dinləyə bilərsiniz."
             send_message = send_message + \
-                f"\n\n**So why wait 🌀 add the bot to a group and get started 🎧"
+                f"\n\n**Daha ətraflı məlumat üçün /help basın"
             return send_message, getReplyKeyBoard(message, action)
 
         elif action == "help-msg":
@@ -37,7 +37,7 @@ def getMessage(message, action):
                 f"\n• **/adminmode on|off : ** __Admin modunu açar və səslidə mahnını yalnızca adminlər başlada bilər.__"
             helpMessage = helpMessage + \
                 f"\n• **/loop [2-5]|off : ** __Mahnı sürətini ayarlayar Maks 2-5.__"
-            helpMessage = helpMessage + f"\n\n**__Botun asitanı @DarkMusicAssistant**"
+            helpMessage = helpMessage + f"\n\n**__Botun asitanı @DarkMusicAssistan**"
             return helpMessage, getReplyKeyBoard(message, action)
 
         elif action == "chat-not-allowed":
