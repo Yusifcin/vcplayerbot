@@ -12,7 +12,7 @@ def getMessage(message, action):
         if action == "private-chat":
             send_message = f"**Salam 🎵 {message.chat.first_name if hasattr(message.chat, 'first_name') else 'User'}**"
             send_message = send_message + \
-                f"\n\n**[Yushka Music🎶]({config.get('BOT_URL')})** is a [@ABISHOV_27]({config.get('PARENT_URL')})."
+                f"\n\n**[𓆩ᴅs𓆪 ¦ 𝐌𝐮𝐬𝐢𝐜](@DarkVoiceMusic_bot)** is a [YUSHKA🇦🇿](@ABISHOV_27)."
             send_message = send_message + \
                 f"\n__It is designed to play, as simple as possible, music in your groups through the **new voice chats** introduced by Telegram.__"
             send_message = send_message + \
@@ -45,7 +45,7 @@ def getMessage(message, action):
             send_message = send_message + \
                 f"\n\n**Why ❓**\n- __Due to high usage we have restrcited the usage of the bot in just our [Support Group]({config.get('SUPPORT_GROUP')}) __"
             send_message = send_message + \
-                f"\n- __Join the [Support Group]({config.get('SUPPORT_GROUP')}) to access the bot or deploy your own bot __"
+                f"\n- __Join the [Kanalımız🇦🇿](https://t.me/DSmusic_News) to access the bot or deploy your own bot __"
 
             return send_message, getReplyKeyBoard(message, action)
 
@@ -68,14 +68,14 @@ def getReplyKeyBoard(message, action):
                 [
                     [
                         InlineKeyboardButton(
-                            "➕ Add the bot to Group ➕", url=f"{config.get('BOT_URL')}?startgroup=bot"),
+                            "➕ Botu qrupa əlavə et ➕", url=f"{config.get('BOT_URL')}?startgroup=bot"),
                     ],
                     [
                         InlineKeyboardButton(
-                            "👥 Support Group", url=f"{config.get('SUPPORT_GROUP')}"),
+                            "👥 Sahib", url=f"https://t.me/ABISHOV_27"),
 
                         InlineKeyboardButton(
-                            "📔 Source Code", url=f"{config.get('GITHUB_REPO')}"),
+                            "🇦🇿 Kanal", url=f"https://t.me/DSmusic_News"),
                     ],
 
                 ]
@@ -86,11 +86,11 @@ def getReplyKeyBoard(message, action):
                 [
                     [
                         InlineKeyboardButton(
-                            "🏁 Use In Demo Group", url=f"{config.get('SUPPORT_GROUP')}"),
+                            "🏁 Əlavə mənbə", url=f"https://t.me/YusifinBiosu"),
                     ],
                     [
                         InlineKeyboardButton(
-                            "📔 Source Code", url=f"{config.get('GITHUB_REPO')}"),
+                            "📔 Kanal", url=f"https://t.me/DSmusic_News"),
 
                     ],
 
