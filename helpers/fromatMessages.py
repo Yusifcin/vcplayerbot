@@ -10,7 +10,7 @@ def getMessage(message, action):
         ALLOWED_CHAT_TYPES = config.get("ALLOWED_CHAT_TYPES")
 
         if action == "private-chat":
-            send_message = f"**Salam 🎵 {message.chat.first_name if hasattr(message.chat, 'first_name') else 'User'}**"
+            send_message = f"**Salam 🎵 {message.chat.first_name if hasattr(message.chat, 'first_name') else 'User'}"
             send_message = send_message + \
                 f"\n\n𓆩ᴅs𓆪 ¦ 𝐌𝐮𝐬𝐢𝐜 @ABISHOV_27 tərəfindən hazırlanıb."
             send_message = send_message + \
