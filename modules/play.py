@@ -150,7 +150,7 @@ async def play(client, message, current_client):
                             logInfo(
                                 f"Sending cover mesage in chat : {chat_id} : {cover_file_name}")
 
-                            caption = f"**🎧 Adı:** `{(song_info['title'].strip())[:20]}`\n**⏱ Müddət:** `{song_info['duration']}`\n**⚡ İstəyən:** {req_by}\n\n`Dinləmək üçün [👉BURA](https://t.me/{songInfo['requested_by']['group_username']}?voicechat) basaraq Səsli Söhbətə qatılın.Xoş dinləmələr🎧.`{footer_val}"
+                            caption = f"**🎧 Adı:** `{(song_info['title'].strip())[:20]}`\n**⏱ Müddət:** `{song_info['duration']}`\n**⚡ İstəyən:** {req_by}\n\n[Click Here](https://t.me/{songInfo['requested_by']['group_username']}?voicechat) basaraq səsli söhbətə qatılın.Xoş dinləmələr🎧.`{footer_val}"
                             m = await client.send_photo(
                                 message.chat.id,
                                 photo=cover_file_name,
