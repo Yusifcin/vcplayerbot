@@ -12,7 +12,7 @@ def getMessage(message, action):
         if action == "private-chat":
             send_message = f"**Salam 🎵 {message.chat.first_name if hasattr(message.chat, 'first_name') else 'User'}"
             send_message = send_message + \
-                f"\n\n𓆩ᴅs𓆪 ¦ 𝐌𝐮𝐬𝐢𝐜 @ABISHOV_27 tərəfindən hazırlanıb."
+                f"\n\n𝐁𝐨𝐬𝐬 𝐌𝐮𝐬𝐢𝐜 @Mamedov_Elgiz tərəfindən hazırlanıb."
             send_message = send_message + \
                 f"\nBotu qrupunuza əlavə edərək səsli söhbətdə mahnı dinləyə bilərsiniz."
             send_message = send_message + \
@@ -20,7 +20,7 @@ def getMessage(message, action):
             return send_message, getReplyKeyBoard(message, action)
 
         elif action == "help-msg":
-            helpMessage = f"**Səsli Mahnı Botuna Xoş Gəlmisən**"
+            helpMessage = f"**𝐁𝐨𝐬𝐬 𝐌𝐮𝐬𝐢𝐜 istifadə qaydası**"
             helpMessage = helpMessage + \
                 f"\n\n• **/play mahnı adı/mahnı linki : ** __Qrupda səslidə mahnı oxudar.__"
             helpMessage = helpMessage + f"\n• **/skip : ** __Növbəti mahnıya keçər.__"
@@ -37,7 +37,7 @@ def getMessage(message, action):
                 f"\n• **/adminmode on|off : ** __Admin modunu açar və səslidə mahnını yalnızca adminlər başlada bilər.__"
             helpMessage = helpMessage + \
                 f"\n• **/loop [2-5]|off : ** __Mahnı sürətini ayarlayar Maks 2-5.__"
-            helpMessage = helpMessage + f"\n\n**__Botun asitanı @DarkMusicAssistan**"
+            helpMessage = helpMessage + f"\n\n**__Botun asitanı @BOSS_CLUB_Asistant**"
             return helpMessage, getReplyKeyBoard(message, action)
 
         elif action == "chat-not-allowed":
@@ -45,7 +45,7 @@ def getMessage(message, action):
             send_message = send_message + \
                 f"\n\n**Why ❓**\n- __Due to high usage we have restrcited the usage of the bot in just our [Support Group]({config.get('SUPPORT_GROUP')}) __"
             send_message = send_message + \
-                f"\n- __Join the [Kanalımız🇦🇿](https://t.me/DSmusic_News) to access the bot or deploy your own bot __"
+                f"\n- __Join the [Qrupumuz🇦🇿](https://t.me/BOSS_QURUP) to access the bot or deploy your own bot __"
 
             return send_message, getReplyKeyBoard(message, action)
 
@@ -72,10 +72,10 @@ def getReplyKeyBoard(message, action):
                     ],
                     [
                         InlineKeyboardButton(
-                            "👥 Sahib", url=f"https://t.me/ABISHOV_27"),
+                            "👥 Sahib", url=f"https://t.me/Mamedov_Elgiz"),
 
                         InlineKeyboardButton(
-                            "🇦🇿 Kanal", url=f"https://t.me/DSmusic_News"),
+                            "🇦🇿 Qrupumuz", url=f"https://t.me/BOSS_QURUP"),
                     ],
 
                 ]
@@ -86,11 +86,11 @@ def getReplyKeyBoard(message, action):
                 [
                     [
                         InlineKeyboardButton(
-                            "🏁 Əlavə mənbə", url=f"https://t.me/YusifinBiosu"),
+                            "🏁 Bot yaradılması xidməti", url=f"https://t.me/YusifinBiosu"),
                     ],
                     [
                         InlineKeyboardButton(
-                            "📔 Kanal", url=f"https://t.me/DSmusic_News"),
+                            "📔 Qrupumuz", url=f"https://t.me/BOSS_QURUP"),
 
                     ],
 
