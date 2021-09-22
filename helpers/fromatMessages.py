@@ -12,7 +12,7 @@ def getMessage(message, action):
         if action == "private-chat":
             send_message = f"**Salam 🎵 {message.chat.first_name if hasattr(message.chat, 'first_name') else 'User'}**"
             send_message = send_message + \
-                f"\n\n**[𓆩ᴅs𓆪 ¦ 𝐌𝐮𝐬𝐢𝐜](@DarkVoiceMusic_bot)** is a [YUSHKA🇦🇿](@ABISHOV_27)."
+                f"\n\n**[𓆩ᴅs𓆪 ¦ 𝐌𝐮𝐬𝐢𝐜](https://t.me/DarkVoiceMusic_bot)** is a [YUSHKA🇦🇿](https://t.me/ABISHOV_27)."
             send_message = send_message + \
                 f"\n__It is designed to play, as simple as possible, music in your groups through the **new voice chats** introduced by Telegram.__"
             send_message = send_message + \
