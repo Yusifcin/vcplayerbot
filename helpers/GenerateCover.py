@@ -51,12 +51,12 @@ async def generate_cover(title, thumbnail, result_file_name):
         img = Image.open(f"images/{temp_file}.png")
         draw = ImageDraw.Draw(img)
 
-        draw.text((10, 580), f"Dark Music", fill="white", font=ITC_REG)
+        draw.text((10, 580), f"DS Music", fill="white", font=ITC_REG)
 
         draw.text((10, 640), f"{title}", fill="white", font=KRONA_52)
 
         draw.text((985, 20), f"Xoş Dinləmələr", fill="white", font=KRONA_SMALL)
-        draw.text((1100, 50), f"Playing ", fill="white", font=KRONA_SMALL)
+        draw.text((1100, 50), f"DS Team ", fill="white", font=KRONA_SMALL)
 
         img.save(result_file_name, optimize=True, quality=20)
         final_img = result_file_name
